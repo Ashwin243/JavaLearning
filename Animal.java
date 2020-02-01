@@ -29,6 +29,9 @@ public class Animal {
 
         }
 
+        public void sleep(){
+            System.out.println("Yaake Isthu Malgtiya");
+        }
         public String getName() {
             return name;
         }
