@@ -40,15 +40,7 @@ public class TestWallConstructor {
     public TestWallConstructor(){
     }
     public TestWallConstructor(double width,double height){
-//        this.height= (height < 0) ? 0 : height;
-//        this.width=(width < 0) ? 0 : width;
-        setHeight(height);
-        setWidth(width);
-    }
-    public void setHeight(double height){
         this.height= (height < 0) ? 0 : height;
-    }
-    public void setWidth(double width){
         this.width=(width < 0) ? 0 : width;
     }
     public double getHeight(){
