@@ -22,6 +22,10 @@ public class Animal {
             System.out.println("Animal.move() called.  Animal is moving at " +speed);
 
         }
+  
+        public void sleep(){
+            System.out.println("Yaake Isthu Malgtiya");
+        }
 
         public String getName() {
             return name;
