@@ -17,21 +17,16 @@ public class Animal {
             System.out.println("Animal.eat() called");
 
         }
-        public void sleep() {
-        System.out.println("Animal.sleep() called and animal is sleeping");
 
-    }
-    public void move(){
-        System.out.println("Why this kolaveri di");
-    }
         public void move(int speed) {
             System.out.println("Animal.move() called.  Animal is moving at " +speed);
 
         }
-
+  
         public void sleep(){
             System.out.println("Yaake Isthu Malgtiya");
         }
+
         public String getName() {
             return name;
         }
