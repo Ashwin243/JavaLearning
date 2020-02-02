@@ -1,54 +1,54 @@
+// Challenge.
+// Start with a base class of a Vehicle, then create a Car class that inherits from this base class.
+// Finally, create another class, a specific type of Car that inherits from the Car class.
+// You should be able to hand steering, changing gears, and moving (speed in other words).
+// You will want to decide where to put the appropriate state and behaviours (fields and methods).
+// As mentioned above, changing gears, increasing/decreasing speed should be included.
+// For you specific type of vehicle you will want to add something specific for that type of car.
 public class vehicle {
-    private int wheels;
-    private int seat;
-    private int horn;
-    private int size;
-    private int brakes;
     private String name;
+    private String size;
 
-    public vehicle(){
-        this(5,0,0,0,0,"Default vehicle");
-    }
-    public vehicle(int wheels){
-        this(wheels,0,0,0,0,"Default vehicle");
-    }
-    public vehicle(int wheels,int size,String name){
-        this(wheels,0,0,size,0,name);
-    }
- public vehicle(int wheels,int seat,int horn,int size,int brakes,String name){
-     this.wheels=wheels;
-     this.seat=seat;
-     this.horn=horn;
-     this.size=size;
-     this.brakes=brakes;
-     this.name=name;
- }
+    private int currentVelocity;
+    private int currentDirection;
 
- public void getSpeed(){
-     System.out.println("Speed of vehicle = "+(getWheels()*10));
- }
-
-    public int getWheels() {
-        return wheels;
+    public vehicle(String name, String size) {
+        this.name = name;
+        this.size = size;
+        this.currentVelocity = 0;
+        this.currentDirection = 0;
     }
 
-    public int getSeat() {
-        return seat;
+    public void steer(int direction) {
+        this.currentDirection += direction;
+        System.out.println("Vehicle.steer(): Steering at " + currentDirection + " degrees.");
     }
 
-    public int getHorn() {
-        return horn;
-    }
+    public void move(int velocity, int direction) {
+        currentVelocity = velocity;
+        currentDirection = direction;
+        System.out.println("Vehicle.move(): Moving at " + currentVelocity + " in direction " + currentDirection);
 
-    public int getSize() {
-        return size;
-    }
-
-    public int getBrakes() {
-        return brakes;
     }
 
     public String getName() {
         return name;
     }
+
+    public String getSize() {
+        return size;
+    }
+
+    public int getCurrentVelocity() {
+        return currentVelocity;
+    }
+
+    public int getCurrentDirection() {
+        return currentDirection;
+    }
+
+    public void stop() {
+        this.currentVelocity = 0;
+    }
+
 }
