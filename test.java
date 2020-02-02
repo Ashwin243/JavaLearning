@@ -112,15 +112,21 @@ public class test {
 //        System.out.println("cylinder.height= " + cylinder.getHeight());
 //        System.out.println("cylinder.area= " + cylinder.getArea());
 //        System.out.println("cylinder.volume= " + cylinder.getVolume());
-                Rectangle rectangle = new Rectangle(5, 10);
-        System.out.println("rectangle.width= " + rectangle.getWidth());
-        System.out.println("rectangle.length= " + rectangle.getLength());
-        System.out.println("rectangle.area= " + rectangle.getArea());
-                Cuboid cuboid = new Cuboid(5,10,5);
-        System.out.println("cuboid.width= " + cuboid.getWidth());
-        System.out.println("cuboid.length= " + cuboid.getLength());
-        System.out.println("cuboid.area= " + cuboid.getArea());
-        System.out.println("cuboid.height= " + cuboid.getHeight());
-        System.out.println("cuboid.volume= " + cuboid.getVolume());
+//                Rectangle rectangle = new Rectangle(5, 10);
+//        System.out.println("rectangle.width= " + rectangle.getWidth());
+//        System.out.println("rectangle.length= " + rectangle.getLength());
+//        System.out.println("rectangle.area= " + rectangle.getArea());
+//                Cuboid cuboid = new Cuboid(5,10,5);
+//        System.out.println("cuboid.width= " + cuboid.getWidth());
+//        System.out.println("cuboid.length= " + cuboid.getLength());
+//        System.out.println("cuboid.area= " + cuboid.getArea());
+//        System.out.println("cuboid.height= " + cuboid.getHeight());
+//        System.out.println("cuboid.volume= " + cuboid.getVolume());
+        Nano nano = new Nano(36);
+        nano.steer(45);
+        nano.accelerate(30);
+        nano.accelerate(20);
+        nano.accelerate(-42);
+
     }
 }
