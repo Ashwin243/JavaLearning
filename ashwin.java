@@ -28,8 +28,8 @@ public class ashwin {
     }
 
     public static void main(String[] args) {
-        double a=calcFeetAndInchesToCentimeters(calcFeetAndInchesToCentimeters(1),10);
-        System.out.println(a);
+        double abs=calcFeetAndInchesToCentimeters(calcFeetAndInchesToCentimeters(1),10);
+        System.out.println(abs);
     }
 }
 
