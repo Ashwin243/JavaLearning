@@ -109,13 +109,13 @@ public class testMethodOverloading {
                     System.out.print("Enter the score for " + subject5 + " out of 100: ");
                     int score5 = score.nextInt();
                     System.out.print("\n");
-                    System.out.println("**************************************************");
+                    System.out.println("**********************************************");
                     hasFailed(subject1,score1);
                     hasFailed(subject2,score2);
                     hasFailed(subject3,score3);
                     hasFailed(subject4,score4);
                     hasFailed(subject5,score5);
-                    System.out.println("**************************************************");
+                    System.out.println("**********************************************");
                     average(studentname, score1, score2, score3, score4, score5);
                     executeTillTheEnd = true;
                 } catch (InputMismatchException ashwin) {
