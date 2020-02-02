@@ -7,11 +7,11 @@ public class ashwin {
             return -1.0;
         }
 
-        double cm=feet*12*2.54;
-        cm+=inches*2.54;
+        double cmt=feet*12*2.54;
+        cmt+=inches*2.54;
         //return cm;
-        System.out.println(feet +" feet, " +inches+ " inches = " +cm+ " cms" );
-        return cm;
+        System.out.println(feet +" feet, " +inches+ " inches = " +cmt+ " cms" );
+        return cmt;
 
     }
     public static double calcFeetAndInchesToCentimeters(double inches){
