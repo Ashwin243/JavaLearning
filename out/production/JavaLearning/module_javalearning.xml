@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_javalearning" default="compile.module.javalearning">
+  <dirname property="module.javalearning.basedir" file="${ant.file.module_javalearning}"/>
+  
+  <property name="module.jdk.home.javalearning" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.javalearning" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.javalearning" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.javalearning" value="-encoding UTF-8 -source 8 -target 8 ${compiler.args}"/>
+  
+  <property name="javalearning.output.dir" value="${module.javalearning.basedir}/out/production/JavaLearning"/>
+  <property name="javalearning.testoutput.dir" value="${module.javalearning.basedir}/out/test/JavaLearning"/>
+  
+  <path id="javalearning.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="javalearning.module.production.classpath">
+    <path refid="${module.jdk.classpath.javalearning}"/>
+  </path>
+  
+  <path id="javalearning.runtime.production.module.classpath">
+    <pathelement location="${javalearning.output.dir}"/>
+  </path>
+  
+  <path id="javalearning.module.classpath">
+    <path refid="${module.jdk.classpath.javalearning}"/>
+    <pathelement location="${javalearning.output.dir}"/>
+  </path>
+  
+  <path id="javalearning.runtime.module.classpath">
+    <pathelement location="${javalearning.testoutput.dir}"/>
+    <pathelement location="${javalearning.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.javalearning">
+    <patternset refid="ignored.files"/>
+    <exclude name="out/**"/>
+    <exclude name="out/production/**"/>
+    <exclude name="out/production/JavaLearning/**"/>
+    <exclude name="out/production/JavaLearning/.idea/**"/>
+    <exclude name="out/production/JavaLearning/.idea/libraries/**"/>
+    <exclude name="out/production/JavaLearning/gradle/**"/>
+    <exclude name="out/production/JavaLearning/gradle/wrapper/**"/>
+    <exclude name="out/production/JavaLearning/.gradle/**"/>
+    <exclude name="out/production/JavaLearning/.gradle/5.2.1/**"/>
+    <exclude name="out/production/JavaLearning/.gradle/5.2.1/fileHashes/**"/>
+    <exclude name="out/production/JavaLearning/.gradle/5.2.1/fileChanges/**"/>
+    <exclude name="out/production/JavaLearning/.gradle/5.2.1/executionHistory/**"/>
+    <exclude name="out/production/JavaLearning/.gradle/vcs-1/**"/>
+    <exclude name="out/production/JavaLearning/.gradle/buildOutputCleanup/**"/>
+    <exclude name="out/production/JavaLearning/academy/**"/>
+    <exclude name="out/production/JavaLearning/academy/learnprogramming/**"/>
+    <exclude name="out/production/JavaLearning/META-INF/**"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.javalearning">
+    <patternset refid="excluded.from.module.javalearning"/>
+  </patternset>
+  
+  <path id="javalearning.module.sourcepath">
+    <dirset dir="${module.javalearning.basedir}/../../JavaLearning">
+      <include name="JavaLearning"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.javalearning" depends="compile.module.javalearning.production,compile.module.javalearning.tests" description="Compile module JavaLearning"/>
+  
+  <target name="compile.module.javalearning.production" depends="register.custom.compilers" description="Compile module JavaLearning; production classes">
+    <mkdir dir="${javalearning.output.dir}"/>
+    <javac2 destdir="${javalearning.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.javalearning}/javac">
+      <compilerarg line="${compiler.args.javalearning}"/>
+      <bootclasspath refid="javalearning.module.bootclasspath"/>
+      <classpath refid="javalearning.module.production.classpath"/>
+      <src refid="javalearning.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.javalearning"/>
+    </javac2>
+    
+    <copy todir="${javalearning.output.dir}">
+      <fileset dir="${module.javalearning.basedir}">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.javalearning.tests" depends="register.custom.compilers,compile.module.javalearning.production" description="compile module JavaLearning; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.javalearning" description="cleanup module">
+    <delete dir="${javalearning.output.dir}"/>
+    <delete dir="${javalearning.testoutput.dir}"/>
+  </target>
+</project>
