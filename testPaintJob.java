@@ -100,6 +100,7 @@ public class testPaintJob {
     public static void main(String[] args) {
         int numofbuckets=getBucketCount(2.75, 3.25, 2.5, 1);
         int numofbuckets1=getBucketCount(3.26,0.75);
+        int numofbuckets2=getBucketCount(5.4,2.3);
         System.out.println(numofbuckets1);
 
     }

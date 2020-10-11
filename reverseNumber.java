@@ -5,7 +5,9 @@ public class reverseNumber {
     public static int reverse(int num){
         int remainder=0;
         int rev=0;
-        while(num!=0)
+        int highestNum = (int) (Math.pow(2,31) - 1);
+        int leastNum = (int) Math.pow(2,-31);
+            while(num!=0 && (num < highestNum) && (num > highestNum) )
         {
             remainder = num%10;
             rev = rev*10 + remainder;
