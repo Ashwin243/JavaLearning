@@ -383,8 +383,13 @@ public class test {
         while(itemList.size() < num){
             itemList.add(number.next());
         }
+       // int a = Math.pow()
         return itemList;
+
     }
+    String A = "abc";
+    String B = "csd";
+    int a = A.compareTo(B);
 
 
 
